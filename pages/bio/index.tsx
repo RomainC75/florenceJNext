@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { ImageInterface } from "../../components/@types/image.type";
+import { ImageInterface } from "../../@types/image.type";
 import { getAltFromFileName } from "../../lib/api/imageIdConvertor.api";
 import { getEncartOnPage } from "../../lib/api/text.api";
 import { getImagesByName } from "../../lib/contentfulImage";
@@ -59,7 +59,7 @@ const Bio = ({ images, documents }: BioPageInterface) => {
       <section className="section5">
         <RichText document={documents[4]} />
       </section>
-      
+
     </div>
   );
 };

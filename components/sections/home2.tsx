@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { ImageInterface } from "../@types/image.type";
+import { ImageInterface } from "../../@types/image.type";
 import RichText from "../richText";
 import { Document } from "@contentful/rich-text-types";
 

@@ -1,4 +1,4 @@
-import { ImageInterface } from '../components/@types/image.type'
+import { ImageInterface } from '../@types/image.type'
 import { getImageIdByName } from './api/imageIdConvertor.api'
 
 const contentful = require('contentful')
