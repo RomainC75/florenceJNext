@@ -41,7 +41,7 @@ export async function getAllImageId(preview) {
   return extractImageEntries(entries);
 }
 
-export async function getImageIdByName(name) {
+export async function getImageIdByName(name:string) {
     const entry = await fetchGraphQL(
       `query {
         imageIdConvertorCollection(where: { name: "${name}" }, preview: true, limit: 1) {
@@ -52,5 +52,11 @@ export async function getImageIdByName(name) {
       }`,
       true
     );
+
     return extractImageEntry(entry);
+  }
+
+
+  export function getAltFromFileName(fileName:string):string{
+    return fileName.split('.')[0]
   }

@@ -1,5 +1,4 @@
-import { getAllEncart } from "../lib/api/text.api";
-import RichText from "../components/richText";
+import { getEncartOnPage } from "../lib/api/text.api";
 import {
   getImageById,
   getImageByName,
@@ -14,12 +13,14 @@ import Image from 'next/image'
 interface IndexInterface {
   home1Document: Document;
   home2Document: Document;
+  documents: Document;
   homeImages: ImageInterface[];
 }
 
 export default function Index({
   home1Document,
   home2Document,
+  documents,
   homeImages,
 }: IndexInterface) {
   return (
@@ -33,8 +34,8 @@ export default function Index({
         />
       </div>
       <div className="content">
-        <Home1 document={home1Document} />
-        <Home2 document={home2Document} images={homeImages} />
+        <Home1 document={documents[0]} />
+        <Home2 document={documents[1]} images={homeImages} />
       </div>
     </div>
   );
@@ -42,29 +43,12 @@ export default function Index({
 
 export async function getStaticProps({ preview = false }) {
   
-  const data = await getAllEncart();
-  console.log("data ", data);
-  const res = await getImageById("E3JdmehOhCKbWajplfPuM");
-  console.log("finish ,", await getImageByName("home-header"));
-  console.log("finish ,", await getImageByName("home-section2-1"));
-  console.log("finish ,", await getImageByName("home-section2-2"));
-  console.log("++++++++++++++++++++++");
-  console.log(
-    "foundEncart : ",
-    data.find((encart) => encart.title === "home-1")
-  );
-  console.log(
-    "ALL : ",
-    await getImagesByName(["home-section2-1", "home-section2-2"])
-  );
+  const documents = (await getEncartOnPage('bio')).map(encart=>encart.rtext.json)
+  console.log("data ", documents);
 
   return {
     props: {
-      rText: data,
-      home1Document: data.find((encart) => encart.title === "home-1").rtext
-        .json,
-      home2Document: data.find((encart) => encart.title === "home-2").rtext
-        .json,
+      documents,
       homeImages: await getImagesByName([
         "home-header",
         "home-section2-1",

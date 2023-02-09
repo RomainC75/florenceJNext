@@ -116,3 +116,19 @@ export async function getAllEncart(preview?:boolean)  {
   
   return entries.data.encartCollection.items ? entries.data.encartCollection.items : null
 }
+
+export async function getEncartOnPage(pageName, preview?:boolean)  {
+  const entries = await fetchGraphQL(
+    `query {
+      encartCollection (where:{page:"${pageName}"}, order: [title_ASC]){
+        total
+        items {
+          ${ENCART_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    preview
+  );
+  
+  return entries.data.encartCollection.items ? entries.data.encartCollection.items : null
+}
