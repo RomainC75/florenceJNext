@@ -10,14 +10,14 @@ import {
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Carroussel from "../components/Carroussel";
-import { getCarouselImages } from "../lib/api/imageIdConvertor.api";
+import { getCarouselImageIdsAndNames } from "../lib/api/imageIdConvertor.api";
 
 interface IndexInterface {
   home1Document: Document;
   home2Document: Document;
   documents: Document;
   homeImages: ImageInterface[];
-  carouselImages?: ImageIdConvertorInterface[];
+  carouselImages?: ImageInterface[];
   error: boolean;
 }
 
@@ -64,7 +64,7 @@ export default function Index({
       <div className="content">
         <Home1 document={documents[0]} />
         <Home2 document={documents[1]} images={homeImages} />
-        {/* <Carroussel carouselImages={carouselImages}/> */}
+        {carouselImages && <Carroussel carouselImages={carouselImages}/>}
       </div>
     </div>
   );
@@ -77,23 +77,24 @@ export async function getStaticProps({ preview = false }) {
   );
 
   console.log("data ", documents);
-  const images = await getCarouselImages();
+  const images = await getCarouselImageIdsAndNames();
   console.log("+++++", images);
-  const fullInfoImages = await getImagesByName(images.map((img) => img.name));
-  console.log("+++FULL INFO IMG+++", fullInfoImages);
+  const carouselImages = await getImagesByName(images.map((img) => img.name));
+  console.log("+++FULL INFO IMG+++", carouselImages);
   const homeImages = await getImagesByName([
     "home-header",
     "home-section2-1",
     "home-section2-2",
   ]);
 
-  error = homeImages.includes(null) || fullInfoImages.includes(null) || fullInfoImages.length===0
+  error = homeImages.includes(null) || carouselImages.includes(null) || carouselImages.length===0
 
   return {
     props: {
       documents,
       homeImages,
       error,
+      carouselImages
     },
     revalidate: 43200,
   };

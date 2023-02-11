@@ -60,7 +60,7 @@ export async function getImageIdByName(name: string):Promise<string|null> {
   return  extractImageIdEntry(entry)
 }
 
-export async function getCarouselImages():Promise<ImageIdConvertorInterface[]>{
+export async function getCarouselImageIdsAndNames():Promise<ImageIdConvertorInterface[]>{
   const entry:RawImageInterface = await fetchGraphQL(
     `query {
         imageIdConvertorCollection(where: { name_contains: "carousel" }, preview: true) {
@@ -71,6 +71,7 @@ export async function getCarouselImages():Promise<ImageIdConvertorInterface[]>{
       }`,
     true
   );
+  
   const extractedEntries:ImageIdConvertorInterface[] = extractImageEntries(entry)
   return extractedEntries.sort((a,b)=>a.name.localeCompare(b.name))
 }

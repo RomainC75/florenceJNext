@@ -14,8 +14,10 @@ export const getImageById = async (
   return new Promise(async (resolve, reject) => {
     try {
       const asset = await client.getAsset(id);
+      console.log("==>ASSET+++", asset)
       // resolve('https://'+asset.fields.file.url)
       resolve({
+        title:asset.fields.title,
         ...asset.fields.file,
         url: "https:" + asset.fields.file.url,
       });

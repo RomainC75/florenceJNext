@@ -8,6 +8,7 @@ export interface RawImageInterface{
 }
 
 export interface ImageInterface{
+    title:string,
     url:string,
     details:{
         size: number,
