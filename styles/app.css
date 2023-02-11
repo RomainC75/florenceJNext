@@ -1,0 +1,12 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+.DMSerif {
+  font-family: "DM Serif Text", serif;
+}
+
+.Didone {
+  font-family: "Antic Didone", serif;
+}/*# sourceMappingURL=app.css.map */

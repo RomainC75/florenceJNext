@@ -5,7 +5,7 @@ import Home2 from "../components/sections/home2";
 import { Document } from "@contentful/rich-text-types";
 import { ImageInterface } from "../@types/image.type";
 import Image from "next/image";
-import classes from "./styles/index.module.css";
+import { useState, useEffect } from "react";
 
 interface IndexInterface {
   home1Document: Document;
@@ -22,19 +22,31 @@ export default function Index({
 }: IndexInterface) {
   console.log("====================");
 
+  const [YPosition, setYPosition] = useState<number>(0);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setYPosition(window.pageYOffset);
+    });
+  });
+
   return (
     <div className="Index">
-      <div className="w-full h-screen relative">
-        <div className={classes.curtain}></div>
-        <div className={classes.title}>
+      <div className="header">
+        <div
+          className="curtain"
+          style={{ background: `rgba(0, 0, 0, ${0.4 + YPosition * 0.001})` }}
+        ></div>
+        <div className="Didone title">
           <h1>Florence Jacquesson</h1>
+          <p>Scuplpteur Animalier</p>
         </div>
         <Image
           src={homeImages[0].url}
           alt={homeImages[0].fileName}
           width={1280}
           height={576}
-          className="w-full h-full object-cover inset-0"
+          className="bigImage"
         />
       </div>
       <div className="content">

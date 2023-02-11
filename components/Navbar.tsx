@@ -1,28 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import classes from './navbar.module.css'
+import classes from "./navbar.module.css";
 import Link from "next/link";
 
-const Navbar = () => {
+const Navbar = ():JSX.Element => {
+  const [YPosition, setYPosition] = useState<number>(0);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setYPosition(window.pageYOffset);
+    });
+  });
+
   return (
-    <nav className={classes.center+" bg-transparent flex w-5/6 justify-between z-10"}>
-      <div></div>
-      <div className="">
-        <Image
-            className=""
-          src="/assets/signature-white.png"
-          alt="signature"
-          width={150}
-          height={60}
-        />
-      </div>
-      <div>
-        <Link href="/#mail">
+    <>
+      <div className={`NavbarBackground NavbarHeight ${YPosition>0 && 'NavbarBackground-visible'}`}></div>
+      <nav className={`Navbar NavbarHeight ${YPosition > 0 ? "black" : "white"}`}>
+        <div className="openMenu">
+          x
+        </div>
+        <div className="">
+          <Image
+            className="signateur"
+            src={
+              YPosition > 0
+                ? "/assets/signature-black.png"
+                : "/assets/signature-white.png"
+            }
+            alt="signature"
+            width={150}
+            height={60}
+          />
+        </div>
+        <div className="message_btn">
+          <Link href="/#mail">
             <p>Message</p>
-        </Link>
-        
-      </div>
-    </nav>
+          </Link>
+        </div>
+      </nav>
+    </>
   );
 };
 
