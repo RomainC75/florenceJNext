@@ -11,12 +11,17 @@ const Carousel = ({ carouselImages }: CarouselInterface) => {
   
   return (
     <div className="Carousel">
-      {carouselImages.map((image, i) => 
-        <div className="carouselImage" key={`${i}-${image.fileName}`}>
-            <Image src={image.url} width={500} height={340} alt={image.title}/>
-            <div>{}</div>
-        </div>
-      )}
+        <ul>
+            {carouselImages.map((image, i) => 
+                <li className="carouselImage" key={`${i}-${image.fileName}`}>
+                    <div>
+                    <Image src={image.url} width={500} height={340} alt={image.title}/>
+                    </div>
+                    <div>{image.title}</div>
+                </li>
+            )}
+
+        </ul>
     </div>
   );
 };

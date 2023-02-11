@@ -1,0 +1,15 @@
+.Carousel ul li div:nth-child(1) {
+  width: 480px;
+  height: 330px;
+  overflow: hidden;
+}
+.Carousel ul li div:nth-child(1) img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.5s;
+}
+.Carousel ul li div:nth-child(1) img:hover {
+  transform: scale(1.07);
+}/*# sourceMappingURL=Carousel.css.map */

@@ -1,6 +1,7 @@
 import "../styles/app.css";
 import "../styles/IndexHomePage.css";
 import "../components/styles/navbar.css"
+import "../components/styles/Carousel.css"
 import "../components/sections/styles/Home1.css"
 import "../components/sections/styles/Home2.css"
 import Navbar from "../components/Navbar";
