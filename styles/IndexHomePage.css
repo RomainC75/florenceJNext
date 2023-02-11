@@ -22,7 +22,7 @@
   z-index: 2;
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 .Index .header .title {
   position: relative;
@@ -33,6 +33,9 @@
 .Index .header .title h1 {
   font-size: 4.3rem;
 }
+.Index .header .title p {
+  font-size: 1.75rem;
+}
 .Index .header .bigImage {
   width: 100%;
   height: 100vh;
@@ -42,4 +45,8 @@
      object-position: 60% 10%;
   position: absolute;
   top: 0;
+}
+.Index .content {
+  margin: 0 auto;
+  max-width: 1400px;
 }/*# sourceMappingURL=IndexHomePage.css.map */

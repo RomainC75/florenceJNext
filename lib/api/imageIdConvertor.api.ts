@@ -1,6 +1,5 @@
 import { IMAGEIDCONVERTOR_GRAPHQL_FIELDS } from "./graphql/imageConvertor.graphql";
 
-
 async function fetchGraphQL(query, preview = false) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -24,8 +23,8 @@ function extractImageEntries(fetchResponse) {
 }
 
 function extractImageEntry(fetchResponse) {
-    return fetchResponse?.data?.imageIdConvertorCollection?.items[0].imageId;
-  }
+  return fetchResponse?.data?.imageIdConvertorCollection?.items[0].imageId;
+}
 
 export async function getAllImageId(preview) {
   const entries = await fetchGraphQL(
@@ -41,22 +40,35 @@ export async function getAllImageId(preview) {
   return extractImageEntries(entries);
 }
 
-export async function getImageIdByName(name:string) {
-    const entry = await fetchGraphQL(
-      `query {
+export async function getImageIdByName(name: string) {
+  const entry = await fetchGraphQL(
+    `query {
         imageIdConvertorCollection(where: { name: "${name}" }, preview: true, limit: 1) {
           items {
             ${IMAGEIDCONVERTOR_GRAPHQL_FIELDS}
           }
         }
       }`,
-      true
-    );
+    true
+  );
 
-    return extractImageEntry(entry);
-  }
+  return extractImageEntry(entry);
+}
 
+export async function getCarouselImages(){
+  const entry = await fetchGraphQL(
+    `query {
+        imageIdConvertorCollection(where: { name_contains: "carousel" }, preview: true) {
+          items {
+            ${IMAGEIDCONVERTOR_GRAPHQL_FIELDS}
+          }
+        }
+      }`,
+    true
+  );
+  return extractImageEntries(entry).sort((a,b)=>a.name.localeCompare(b.name))
+}
 
-  export function getAltFromFileName(fileName:string):string{
-    return fileName.split('.')[0]
-  }
+export function getAltFromFileName(fileName: string): string {
+  return fileName.split(".")[0];
+}

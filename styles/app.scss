@@ -4,11 +4,36 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-
-.DMSerif{
-    font-family: 'DM Serif Text', serif;
+html {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #f9f7f7;
 }
 
-.Didone{
-    font-family: 'Antic Didone', serif;
+*{
+    box-sizing: border-box;
+}
+
+.DMSerif {
+  font-family: "DM Serif Text", serif;
+}
+
+.Didone {
+  font-family: "Antic Didone", serif;
+}
+
+.elegantRText {
+  font-size: 1rem;
+  line-height: 2em;
+  letter-spacing: 0.15em;
+  text-align: justify;
+}
+
+.hideSect{
+    opacity: 0;
+    transform: scale(1.05) translateY(10px);
+}
+
+.dispSect{
+    opacity: 1;
+    transform: scale(1) translateY(0);
 }

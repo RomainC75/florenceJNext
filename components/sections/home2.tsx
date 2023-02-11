@@ -12,25 +12,30 @@ interface Home2Interface {
 const Home2 = ({ document, images }: Home2Interface): JSX.Element => {
   console.log("home2 : ", images);
   return (
-    <section>
-      <div>
-        <RichText document={document} />
-      </div>
-      <div>
+    <section className="Home2">
+      <div className="bigImage">
         <Image
           src={images[1].url}
           alt={images[1].fileName}
-          width={200}
-          height={200}
+          width={1300}
+          height={400}
         />
       </div>
-      <div>
+      <div className="tinyImage">
         <Image
           src={images[2].url}
           alt={images[2].fileName}
           width={200}
           height={200}
         />
+      </div>
+      <div className="text">
+        <div className="text__title">
+          <h3 className="Didone">Sculpture</h3>
+        </div>
+        <div className="text__info elegantRText">
+          <RichText document={document} />
+        </div>
       </div>
     </section>
   );

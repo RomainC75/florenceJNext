@@ -26,7 +26,7 @@
             z-index:2;
             top:0;
             background-color: rgba(0, 0, 0, 0.5);
-            transition: all 0.5s;
+            transition: all 0.2s;
         }
         & .title{
             position:relative;
@@ -35,6 +35,9 @@
             text-align: center;
             & h1{
                 font-size:4.3rem;
+            }
+            & p{
+                font-size:1.75rem;
             }
         }
         & .bigImage{
@@ -46,5 +49,9 @@
             top:0;
 
         }
+    }
+    & .content{
+        margin:0 auto;
+        max-width:1400px;
     }
 }

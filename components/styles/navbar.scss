@@ -1,13 +1,14 @@
 
 
 $navbarHeight: 120px;
+$white: #f9f7f7;
 
 .NavbarBackground{
     position:fixed;
     width:100%;
     z-index:11;
     top:-$navbarHeight;
-    background:white;
+    background-color: white;
     height:$navbarHeight;
     transition:all 0.5s;
 }
@@ -39,7 +40,7 @@ $navbarHeight: 120px;
 .Navbar.white{
     color:white;
     & > .message_btn{
-        border: 1px solid white;
+        border: 1px solid $white;
     }
 }
 

@@ -1,0 +1,35 @@
+.Home2 {
+  height: 900px;
+  display: grid;
+  grid-template: 40% 10% 10% 30% 10%/15% 20% 10% 45% 10%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding-top: 128px;
+}
+.Home2:nth-child(1) img, .Home2:nth-child(2) img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Home2 .bigImage {
+  grid-area: 1/1/3/5;
+}
+.Home2 .tinyImage {
+  width: 100%;
+  grid-area: 4/2/5/3;
+}
+.Home2 .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: 2/4/6/6;
+  background: white;
+  width: 100%;
+}
+.Home2 .text > div {
+  width: 80%;
+}
+.Home2 .text__title {
+  font-size: 3.5rem;
+  margin: 35px auto;
+}/*# sourceMappingURL=Home2.css.map */

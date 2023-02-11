@@ -10,3 +10,8 @@ export interface ImageInterface{
     fileName:string,
     contentType:string
 }
+
+export interface ImageIdConvertorInterface{
+    name:string;
+    imageId: string
+}

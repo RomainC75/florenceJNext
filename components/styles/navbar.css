@@ -3,7 +3,7 @@
   width: 100%;
   z-index: 11;
   top: -120px;
-  background: white;
+  background-color: white;
   height: 120px;
   transition: all 0.5s;
 }
@@ -34,7 +34,7 @@
   color: white;
 }
 .Navbar.white > .message_btn {
-  border: 1px solid white;
+  border: 1px solid #f9f7f7;
 }
 
 .Navbar.black {

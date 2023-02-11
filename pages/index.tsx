@@ -3,15 +3,18 @@ import { getImagesByName } from "../lib/contentfulImage";
 import Home1 from "../components/sections/home1";
 import Home2 from "../components/sections/home2";
 import { Document } from "@contentful/rich-text-types";
-import { ImageInterface } from "../@types/image.type";
+import { ImageIdConvertorInterface, ImageInterface } from "../@types/image.type";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Carroussel from "../components/Carroussel";
+import { getCarouselImages } from "../lib/api/imageIdConvertor.api";
 
 interface IndexInterface {
   home1Document: Document;
   home2Document: Document;
   documents: Document;
   homeImages: ImageInterface[];
+  carouselImages: ImageIdConvertorInterface[]
 }
 
 export default function Index({
@@ -19,6 +22,7 @@ export default function Index({
   home2Document,
   documents,
   homeImages,
+  carouselImages
 }: IndexInterface) {
   console.log("====================");
 
@@ -39,7 +43,7 @@ export default function Index({
         ></div>
         <div className="Didone title">
           <h1>Florence Jacquesson</h1>
-          <p>Scuplpteur Animalier</p>
+          <p>Sculpteur Animalier</p>
         </div>
         <Image
           src={homeImages[0].url}
@@ -52,17 +56,19 @@ export default function Index({
       <div className="content">
         <Home1 document={documents[0]} />
         <Home2 document={documents[1]} images={homeImages} />
+        <Carroussel carouselImages={carouselImages}/>
       </div>
     </div>
   );
 }
 
 export async function getStaticProps({ preview = false }) {
-  const documents = (await getEncartOnPage("bio")).map(
+  const documents = (await getEncartOnPage("home")).map(
     (encart) => encart.rtext.json
   );
-  console.log("data ", documents);
 
+  console.log("data ", documents);
+  
   return {
     props: {
       documents,
@@ -71,6 +77,7 @@ export async function getStaticProps({ preview = false }) {
         "home-section2-1",
         "home-section2-2",
       ]),
+      carouselImages: await getCarouselImages()
     },
     revalidate: 43200,
   };
