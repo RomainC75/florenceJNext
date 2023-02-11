@@ -38,6 +38,8 @@
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: 60% 10%;
+     object-position: 60% 10%;
   position: absolute;
   top: 0;
 }/*# sourceMappingURL=IndexHomePage.css.map */
