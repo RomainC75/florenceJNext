@@ -8,7 +8,7 @@ interface CarouselInterface{
 const Carousel = ({carouselImages}:CarouselInterface) => {
     console.log('insiede carousel ', carouselImages)
   return (
-    <div>Carousel</div>
+    <div className="Carousel">Carousel</div>
   )
 }
 

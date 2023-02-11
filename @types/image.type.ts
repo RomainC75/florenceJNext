@@ -1,3 +1,12 @@
+export interface RawImageInterface{
+    data:{
+        imageIdConvertorCollection:{
+            items:
+                ImageInterface[]
+        }
+    }
+}
+
 export interface ImageInterface{
     url:string,
     details:{
@@ -15,3 +24,6 @@ export interface ImageIdConvertorInterface{
     name:string;
     imageId: string
 }
+
+
+

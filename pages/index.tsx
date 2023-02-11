@@ -3,7 +3,10 @@ import { getImagesByName } from "../lib/contentfulImage";
 import Home1 from "../components/sections/home1";
 import Home2 from "../components/sections/home2";
 import { Document } from "@contentful/rich-text-types";
-import { ImageIdConvertorInterface, ImageInterface } from "../@types/image.type";
+import {
+  ImageIdConvertorInterface,
+  ImageInterface,
+} from "../@types/image.type";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import Carroussel from "../components/Carroussel";
@@ -14,7 +17,8 @@ interface IndexInterface {
   home2Document: Document;
   documents: Document;
   homeImages: ImageInterface[];
-  carouselImages: ImageIdConvertorInterface[]
+  carouselImages?: ImageIdConvertorInterface[];
+  error: boolean;
 }
 
 export default function Index({
@@ -22,7 +26,8 @@ export default function Index({
   home2Document,
   documents,
   homeImages,
-  carouselImages
+  carouselImages,
+  error,
 }: IndexInterface) {
   console.log("====================");
 
@@ -33,6 +38,9 @@ export default function Index({
       setYPosition(window.pageYOffset);
     });
   });
+  if (error) {
+    return <p>There is an error related with Contenful</p>;
+  }
 
   return (
     <div className="Index">
@@ -56,28 +64,36 @@ export default function Index({
       <div className="content">
         <Home1 document={documents[0]} />
         <Home2 document={documents[1]} images={homeImages} />
-        <Carroussel carouselImages={carouselImages}/>
+        {/* <Carroussel carouselImages={carouselImages}/> */}
       </div>
     </div>
   );
 }
 
 export async function getStaticProps({ preview = false }) {
+  let error = false;
   const documents = (await getEncartOnPage("home")).map(
     (encart) => encart.rtext.json
   );
 
   console.log("data ", documents);
-  
+  const images = await getCarouselImages();
+  console.log("+++++", images);
+  const fullInfoImages = await getImagesByName(images.map((img) => img.name));
+  console.log("+++FULL INFO IMG+++", fullInfoImages);
+  const homeImages = await getImagesByName([
+    "home-header",
+    "home-section2-1",
+    "home-section2-2",
+  ]);
+
+  error = homeImages.includes(null) || fullInfoImages.includes(null) || fullInfoImages.length===0
+
   return {
     props: {
       documents,
-      homeImages: await getImagesByName([
-        "home-header",
-        "home-section2-1",
-        "home-section2-2",
-      ]),
-      carouselImages: await getCarouselImages()
+      homeImages,
+      error,
     },
     revalidate: 43200,
   };

@@ -1,3 +1,4 @@
+import { ImageIdConvertorInterface, ImageInterface, RawImageInterface } from "../../@types/image.type";
 import { IMAGEIDCONVERTOR_GRAPHQL_FIELDS } from "./graphql/imageConvertor.graphql";
 
 async function fetchGraphQL(query, preview = false) {
@@ -22,12 +23,17 @@ function extractImageEntries(fetchResponse) {
   return fetchResponse?.data?.imageIdConvertorCollection?.items;
 }
 
-function extractImageEntry(fetchResponse) {
-  return fetchResponse?.data?.imageIdConvertorCollection?.items[0].imageId;
+function extractImageIdEntry(fetchResponse):string|null {
+  console.log('fetch Response : ', fetchResponse)
+  try {
+    return fetchResponse?.data?.imageIdConvertorCollection?.items[0].imageId;
+  } catch (error) {
+    return null
+  }
 }
 
 export async function getAllImageId(preview) {
-  const entries = await fetchGraphQL(
+  const entries:RawImageInterface = await fetchGraphQL(
     `query {
         imageIdConvertorCollection(preview: ${preview ? "true" : "false"}) {
         items {
@@ -40,8 +46,8 @@ export async function getAllImageId(preview) {
   return extractImageEntries(entries);
 }
 
-export async function getImageIdByName(name: string) {
-  const entry = await fetchGraphQL(
+export async function getImageIdByName(name: string):Promise<string|null> {
+  const entry:RawImageInterface = await fetchGraphQL(
     `query {
         imageIdConvertorCollection(where: { name: "${name}" }, preview: true, limit: 1) {
           items {
@@ -51,12 +57,11 @@ export async function getImageIdByName(name: string) {
       }`,
     true
   );
-
-  return extractImageEntry(entry);
+  return  extractImageIdEntry(entry)
 }
 
-export async function getCarouselImages(){
-  const entry = await fetchGraphQL(
+export async function getCarouselImages():Promise<ImageIdConvertorInterface[]>{
+  const entry:RawImageInterface = await fetchGraphQL(
     `query {
         imageIdConvertorCollection(where: { name_contains: "carousel" }, preview: true) {
           items {
@@ -66,7 +71,8 @@ export async function getCarouselImages(){
       }`,
     true
   );
-  return extractImageEntries(entry).sort((a,b)=>a.name.localeCompare(b.name))
+  const extractedEntries:ImageIdConvertorInterface[] = extractImageEntries(entry)
+  return extractedEntries.sort((a,b)=>a.name.localeCompare(b.name))
 }
 
 export function getAltFromFileName(fileName: string): string {
