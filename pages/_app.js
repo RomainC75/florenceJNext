@@ -4,6 +4,8 @@ import "../components/styles/navbar.css"
 import "../components/styles/Carousel.css"
 import "../components/sections/styles/Home1.css"
 import "../components/sections/styles/Home2.css"
+import "../components/styles/Footer.css"
+import Footer from "../components/Footer"
 import Navbar from "../components/Navbar";
 import Head from "next/head";
 
@@ -35,6 +37,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Navbar />
       <Component {...pageProps} />
+      <Footer/>
     </>
   );
 }

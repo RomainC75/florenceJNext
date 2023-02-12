@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ImageIdConvertorInterface, ImageInterface } from "../@types/image.type";
 import Image from "next/image";
 
@@ -7,21 +7,39 @@ interface CarouselInterface {
 }
 
 const Carousel = ({ carouselImages }: CarouselInterface) => {
-  console.log("insiede carousel ", carouselImages);
+  const [shift, setshift] = useState(0)
+    console.log("insiede carousel ", carouselImages);
   
+
+
+    const handleMoveCarousel = (direction) =>{
+        if((direction===1 && shift > 500) || (direction===-1 && shift<(510)*carouselImages.length ) ){
+          setshift(direction*510+shift)
+        }
+    }
+
+    const handleClicked = (el) =>{
+        console.log(el.target)
+        console.log(el.clientX)
+    }
+    
   return (
     <div className="Carousel">
         <ul>
             {carouselImages.map((image, i) => 
-                <li className="carouselImage" key={`${i}-${image.fileName}`}>
+                <li className="carouselImage" style={{transform:`translateX(${shift}px)`}} key={`${i}-${image.fileName}`}>
                     <div>
-                    <Image src={image.url} width={500} height={340} alt={image.title}/>
+                    <Image onMouseDown={(el)=>handleClicked(el)} src={image.url} width={500} height={340} alt={image.title}/>
                     </div>
-                    <div>{image.title}</div>
+                    <div className="imageTitle Didone">{image.title}</div>
                 </li>
             )}
 
         </ul>
+        <div className="btns">
+            <div className="btn" onClick={()=>handleMoveCarousel(1)}> &lt; </div>
+            <div className="btn" onClick={()=>handleMoveCarousel(-1)}> &gt; </div>
+        </div>
     </div>
   );
 };

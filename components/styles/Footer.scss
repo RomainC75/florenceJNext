@@ -1,0 +1,131 @@
+.footer {
+    
+  background-color: #212121;
+  padding-top: 5.5rem;
+  padding-bottom: 4em;
+  color: white;
+  & .footerBigContainer {
+    max-width: 1440px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgb(70, 70, 70);
+    border-bottom: 1px solid rgb(70, 70, 70);
+    margin-top: 30px;
+    & div {
+      font-size: 1.35rem;
+      padding: 2.5rem 0;
+      &:hover {
+        color: #b89535 !important;
+      }
+      & a {
+        color: white;
+        text-decoration: none;
+        font-family: "Antic Didone", serif;
+      }
+    }
+  }
+  &__contactSocial {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+    &__contact {
+      width: 50%;
+      & h3 {
+        font-family: "Antic Didone", serif;
+        font-size: 1.75rem;
+      }
+      &__container {
+        width: 100%;
+        & textarea {
+          height: 90px;
+          padding-top: 10px;
+        }
+        & input {
+          height: 70px;
+        }
+        & input,
+        & textarea {
+          background: #212121;
+          //border:1px solid white;
+          appearance: none;
+          box-shadow: none;
+          outline: none;
+          border: 1px solid rgb(73, 73, 73);
+          color: white;
+          width: 100%;
+
+          padding-left: 10px;
+          font-size: 18px;
+          transition: all 0.5s;
+          &:focus {
+            border: 1px solid #b89535;
+            color: #b89535;
+          }
+        }
+        &__up {
+          display: flex;
+          width: 100%;
+          & input {
+            width: 50%;
+          }
+        }
+      }
+    }
+    &__social {
+      &__title {
+        text-align: right;
+      }
+      &__social {
+        & div {
+          cursor: pointer;
+          border: 1px solid rgb(70, 70, 70);
+          width: 4rem;
+          height: 4rem;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 5px;
+          transition: all 0.5s;
+          &:hover {
+            border: 1px solid #b89535;
+          }
+        }
+      }
+    }
+  }
+
+  & .underline {
+    list-style-type: none;
+    font-size: 2.25em;
+    line-height: 1em;
+    font-family: "Antic Didone", serif;
+
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      background: #b89535;
+      width: 100%;
+      transform: scaleX(0);
+      left: 0;
+      top: 70%;
+      transform-origin: left;
+      transition: all 1s;
+    }
+    &:hover {
+      color: whitesmoke;
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

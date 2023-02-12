@@ -1,0 +1,122 @@
+.footer {
+  background-color: #212121;
+  padding-top: 5.5rem;
+  padding-bottom: 4em;
+  color: white;
+}
+.footer .footerBigContainer {
+  max-width: 1440px;
+  width: 90%;
+  margin: 0 auto;
+}
+.footer__links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgb(70, 70, 70);
+  border-bottom: 1px solid rgb(70, 70, 70);
+  margin-top: 30px;
+}
+.footer__links div {
+  font-size: 1.35rem;
+  padding: 2.5rem 0;
+}
+.footer__links div:hover {
+  color: #b89535 !important;
+}
+.footer__links div a {
+  color: white;
+  text-decoration: none;
+  font-family: "Antic Didone", serif;
+}
+.footer__contactSocial {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.footer__contactSocial__contact {
+  width: 50%;
+}
+.footer__contactSocial__contact h3 {
+  font-family: "Antic Didone", serif;
+  font-size: 1.75rem;
+}
+.footer__contactSocial__contact__container {
+  width: 100%;
+}
+.footer__contactSocial__contact__container textarea {
+  height: 90px;
+  padding-top: 10px;
+}
+.footer__contactSocial__contact__container input {
+  height: 70px;
+}
+.footer__contactSocial__contact__container input, .footer__contactSocial__contact__container textarea {
+  background: #212121;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  box-shadow: none;
+  outline: none;
+  border: 1px solid rgb(73, 73, 73);
+  color: white;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 18px;
+  transition: all 0.5s;
+}
+.footer__contactSocial__contact__container input:focus, .footer__contactSocial__contact__container textarea:focus {
+  border: 1px solid #b89535;
+  color: #b89535;
+}
+.footer__contactSocial__contact__container__up {
+  display: flex;
+  width: 100%;
+}
+.footer__contactSocial__contact__container__up input {
+  width: 50%;
+}
+.footer__contactSocial__social__title {
+  text-align: right;
+}
+.footer__contactSocial__social__social div {
+  cursor: pointer;
+  border: 1px solid rgb(70, 70, 70);
+  width: 4rem;
+  height: 4rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  transition: all 0.5s;
+}
+.footer__contactSocial__social__social div:hover {
+  border: 1px solid #b89535;
+}
+.footer .underline {
+  list-style-type: none;
+  font-size: 2.25em;
+  line-height: 1em;
+  font-family: "Antic Didone", serif;
+  cursor: pointer;
+  position: relative;
+}
+.footer .underline::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background: #b89535;
+  width: 100%;
+  transform: scaleX(0);
+  left: 0;
+  top: 70%;
+  transform-origin: left;
+  transition: all 1s;
+}
+.footer .underline:hover {
+  color: whitesmoke;
+}
+.footer .underline:hover::after {
+  transform: scaleX(1);
+}/*# sourceMappingURL=Footer.css.map */

@@ -35,4 +35,9 @@ html {
 .dispSect {
   opacity: 1;
   transform: scale(1) translateY(0);
+}
+
+a, a:focus, a:hover {
+  color: white !important;
+  text-decoration: none !important;
 }/*# sourceMappingURL=app.css.map */
