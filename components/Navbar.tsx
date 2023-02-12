@@ -7,7 +7,7 @@ const Navbar = ():JSX.Element => {
   const [YPosition, setYPosition] = useState<number>(0);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", () => { 
       setYPosition(window.pageYOffset);
     });
   });
@@ -34,7 +34,7 @@ const Navbar = ():JSX.Element => {
         </div>
         <div className="message_btn">
           <Link href="/#mail">
-            <p>Message</p>
+            <p className={`${YPosition>0 ? 'black' : 'white'}`}>Message</p>
           </Link>
         </div>
       </nav>
