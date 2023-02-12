@@ -33,11 +33,11 @@ const Footer = ():JSX.Element => {
                 </div>
 
                 <div className="footer__links">
-                    <div className="underline"><a href="oeuvres.html">Oeuvres</a></div>
-                    <div className="underline"><a href="#">Actualité</a></div>
-                    <div className="underline"><a href="#">Cours</a></div>
-                    <div className="underline"><a href="#">Archives</a></div>
-                    <div className="underline"><a href="contact.html">Contact</a></div>
+                    <div className="underlinee"><a href="oeuvres.html">Oeuvres</a></div>
+                    <div className="underlinee"><a href="#">Actualité</a></div>
+                    <div className="underlinee"><a href="#">Cours</a></div>
+                    <div className="underlinee"><a href="#">Archives</a></div>
+                    <div className="underlinee"><a href="contact.html">Contact</a></div>
                 </div>
 
 
