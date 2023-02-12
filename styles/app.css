@@ -12,6 +12,11 @@ html {
   box-sizing: border-box;
 }
 
+a, a:focus, a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .DMSerif {
   font-family: "DM Serif Text", serif;
 }
@@ -20,26 +25,42 @@ html {
   font-family: "Antic Didone", serif;
 }
 
+@keyframes menuListeAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.menuElementsApparition {
+  animation: menuListeAnimation 0.8s linear 0.8s forwards;
+}
+
 .elegantRText {
   font-size: 1rem;
   line-height: 2em;
   letter-spacing: 0.15em;
   text-align: justify;
 }
+.elegantRText a {
+  color: rgb(0, 0, 0);
+  -webkit-text-decoration: underline rgb(171, 171, 171);
+          text-decoration: underline rgb(171, 171, 171);
+  font-style: italic;
+  font-weight: 500;
+}
 
 .hideSect {
   opacity: 0;
-  transform: scale(1.05) translateY(10px);
+  transform: scale(1.05) translateY(50px);
 }
 
 .dispSect {
   opacity: 1;
   transform: scale(1) translateY(0);
-}
-
-a, a:focus, a:hover {
-  color: white !important;
-  text-decoration: none !important;
 }
 
 .white {

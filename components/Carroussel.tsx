@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ImageIdConvertorInterface, ImageInterface } from "../@types/image.type";
 import Image from "next/image";
 
@@ -9,7 +9,13 @@ interface CarouselInterface {
 const Carousel = ({ carouselImages }: CarouselInterface) => {
   const [shift, setshift] = useState(0)
     console.log("insiede carousel ", carouselImages);
+    const [YPosition, setYPosition] = useState<number>(0) 
   
+    useEffect(()=>{
+      window.addEventListener('scroll',()=>{
+        setYPosition(window.pageYOffset)
+      })
+    })
 
 
     const handleMoveCarousel = (direction) =>{
@@ -24,7 +30,7 @@ const Carousel = ({ carouselImages }: CarouselInterface) => {
     }
     
   return (
-    <div className="Carousel">
+    <div className={`Carousel ${YPosition>1800 ? 'dispSect' : 'hideSect'}`}>
         <ul>
             {carouselImages.map((image, i) => 
                 <li className="carouselImage" style={{transform:`translateX(${shift}px)`}} key={`${i}-${image.fileName}`}>

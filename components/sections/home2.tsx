@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import Image from "next/image";
 import { ImageInterface } from "../../@types/image.type";
 import RichText from "../richText";
@@ -10,9 +10,17 @@ interface Home2Interface {
 }
 
 const Home2 = ({ document, images }: Home2Interface): JSX.Element => {
+  const [YPosition, setYPosition] = useState<number>(0) 
+  
+  useEffect(()=>{
+    window.addEventListener('scroll',()=>{
+      setYPosition(window.pageYOffset)
+    })
+  })
+
   console.log("home2 : ", images);
   return (
-    <section className="Home2">
+    <section className={`Home2 ${YPosition>1000 ? 'dispSect' : 'hideSect'}`}>
       <div className="bigImage">
         <Image
           src={images[1].url}

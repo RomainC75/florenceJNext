@@ -1,6 +1,7 @@
 .Carousel {
   position: relative;
   margin:100px 0 ;
+  transition: all 0.7s;
   & ul {
     display: flex;
     gap: 30px;

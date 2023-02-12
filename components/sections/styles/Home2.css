@@ -5,6 +5,7 @@
   max-width: 90rem;
   margin: 0 auto;
   padding-top: 128px;
+  transition: all 0.7s;
 }
 .Home2:nth-child(1) img, .Home2:nth-child(2) img {
   height: 100%;
