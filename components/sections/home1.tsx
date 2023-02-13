@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from "react";
 import RichText from "../richText";
+import AnimatedHeader from "../AnimatedHeader";
 
 const Home1 = ({ document }): JSX.Element => {
 
@@ -14,9 +15,15 @@ const Home1 = ({ document }): JSX.Element => {
   console.log("document : ", document);
   return (
     <section className={`Home1 ${YPosition>500 ? 'dispSect' : 'hideSect'}`}>
-      <h2 className="Didone">Démarche Artistique</h2>
+      <div className="textAnimation">
+        {/* <h2 className="Didone">
+        <p>Démarche Artistique</p>
+          <p>Démarche Artistique</p>
+        </h2> */}
+        <AnimatedHeader title="Démarche Artistique" classes={['Didone']}/>
+      </div>
       <div className="text elegantRText">
-        <RichText document={document} />
+        <RichText document={document}  />
       </div>
     </section>
   );

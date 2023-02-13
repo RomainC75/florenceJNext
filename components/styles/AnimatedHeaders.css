@@ -1,0 +1,21 @@
+.AnimatedHeader {
+  display: flex;
+  overflow: hidden;
+}
+.AnimatedHeader > h2, .AnimatedHeader > p {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  white-space: nowrap;
+  animation: 4s linear textAnimation infinite;
+}
+
+@keyframes textAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-519.35px);
+  }
+}/*# sourceMappingURL=AnimatedHeaders.css.map */
