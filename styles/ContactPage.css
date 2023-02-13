@@ -1,3 +1,6 @@
+.ContactPage .content {
+  display: flex;
+}
 .ContactPage .content .sectionContact {
   display: flex;
   justify-content: space-around;
@@ -6,4 +9,15 @@
   max-width: 900px;
   margin: 0 auto;
   padding-bottom: 128px;
+}
+.ContactPage .content .sectionContact .adress__details p {
+  margin-bottom: 10px;
+}
+.ContactPage .content .logo {
+  color: black;
+}
+.ContactPage .content .socials {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
 }/*# sourceMappingURL=ContactPage.css.map */
