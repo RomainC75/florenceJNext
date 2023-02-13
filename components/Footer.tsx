@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import {BsInstagram, BsFacebook, BsPinterest, BsYoutube} from 'react-icons/bs'
 
 const Footer = ():JSX.Element => {
   return (
@@ -23,10 +24,10 @@ const Footer = ():JSX.Element => {
                             Retrouvez-moi sur :
                         </h3>
                         <div className="footer__contactSocial__social__social">
-                            <a href="#"><div><i className="fab fa-instagram"></i></div></a>
-                            <a href="#"><div><i className="fab fa-facebook"></i></div></a>
-                            <a href="#"><div><i className="fab fa-pinterest"></i></div></a>
-                            <a href="#"><div><i className="fab fa-youtube"></i></div></a>
+                            <a href="#"><div><BsInstagram/></div></a>
+                            <a href="#"><div><BsFacebook/></div></a>
+                            <a href="#"><div><BsPinterest/></div></a>
+                            <a href="#"><div><BsYoutube/></div></a>
                         </div>
                         
                     </div>
