@@ -15,15 +15,6 @@
   height: 100vh;
   position: relative;
 }
-.Index .header .curtain {
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: all 0.2s;
-}
 .Index .header .title {
   position: relative;
   z-index: 5;

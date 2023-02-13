@@ -1,0 +1,13 @@
+.ContactPage {
+  & .content {
+    & .sectionContact {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-bottom: 128px;
+    }
+  }
+}

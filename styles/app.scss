@@ -71,3 +71,20 @@ a , a:focus, a:hover{
 .black{
   color:black
 }
+
+.curtain{
+  width:100%;
+  
+  position:absolute;
+  z-index:2;
+  top:0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
+}
+
+.homeCurtain{
+  height:100vh;
+}
+.pageCurtain{
+  height:500px;
+}

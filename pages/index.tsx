@@ -46,13 +46,14 @@ export default function Index({
     <div className="Index">
       <div className="header">
         <div
-          className="curtain"
+          className="curtain homeCurtain"
           style={{ background: `rgba(0, 0, 0, ${0.4 + YPosition * 0.001})` }}
         ></div>
         <div className="Didone title">
           <h1>Florence Jacquesson</h1>
           <p>Sculpteur Animalier</p>
         </div>
+
         <Image
           src={homeImages[0].url}
           alt={homeImages[0].fileName}

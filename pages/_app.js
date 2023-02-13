@@ -6,6 +6,7 @@ import "../components/sections/styles/Home1.css"
 import "../components/sections/styles/Home2.css"
 import "../components/styles/Footer.css"
 import "../components/styles/AnimatedHeaders.css"
+import "../components/styles/SubPageHeader.css"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar";
 import Head from "next/head";
