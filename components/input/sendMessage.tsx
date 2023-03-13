@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react'
+import React, { useState, ChangeEvent, useEffect } from 'react'
 import MessageInterface from '../../@types/message.type'
 import axios from 'axios'
 
@@ -11,6 +11,16 @@ const defaultMessageInfos: MessageInterface = {
 const SendMessage = () => {
   const [messageState, setMessageState] =
     useState<MessageInterface>(defaultMessageInfos)
+  const [notification, setNotification] = useState<null | string>(null)
+
+  useEffect(() => {
+    if (notification) {
+      const timer = setTimeout(() => {
+        setNotification(null)
+      }, 3000)
+      return () => clearTimeout(timer)
+    }
+  }, [notification])
 
   const handleMessage = (
     e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
@@ -27,8 +37,12 @@ const SendMessage = () => {
       .then((ans) => {
         setMessageState(defaultMessageInfos)
         console.log('ans.data', ans.data)
+        setNotification('envoyé')
       })
-      .catch((err) => console.log('err', err))
+      .catch((err) => {
+        console.log('err', err)
+        setNotification('problème')
+      })
     console.log('==>', messageState)
   }
 
@@ -60,6 +74,7 @@ const SendMessage = () => {
           value={messageState.text}
         ></textarea>
         <button onClick={sendMessage}>Envoyer</button>
+        {notification && <p>{notification}</p>}
       </div>
     </div>
   )
