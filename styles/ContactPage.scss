@@ -1,6 +1,6 @@
 .ContactPage {
   & .content {
-    display:flex;
+    display: flex;
     & .sectionContact {
       display: flex;
       justify-content: space-around;
@@ -9,23 +9,21 @@
       max-width: 900px;
       margin: 0 auto;
       padding-bottom: 128px;
-      & .adress{
-        
-        
-        &__details{
-            & p{
-                margin-bottom: 10px;
-            }
+      & .adress {
+        &__details {
+          & p {
+            margin-bottom: 10px;
+          }
         }
       }
     }
-    & .logo{
-        color:black
+    & .logo {
+      color: black;
     }
-    & .socials{
-        margin-top: 10px;
-        display:flex;
-        justify-content: space-around;
+    & .socials {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-around;
     }
   }
 }
