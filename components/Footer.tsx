@@ -41,19 +41,19 @@ const Footer = (): JSX.Element => {
 
         <div className="footer__links">
           <div className="underlinee">
-            <Link href="oeuvres.html">Oeuvres</Link>
+            <Link href="oeuvres">Oeuvres</Link>
           </div>
           <div className="underlinee">
-            <Link href="#">Actualité</Link>
+            <Link href="/actualite">Actualité</Link>
           </div>
           <div className="underlinee">
-            <Link href="#">Cours</Link>
+            <Link href="cours">Cours</Link>
           </div>
           <div className="underlinee">
             <Link href="#">Archives</Link>
           </div>
           <div className="underlinee">
-            <Link href="contact.html">Contact</Link>
+            <Link href="contact">Contact</Link>
           </div>
         </div>
       </div>

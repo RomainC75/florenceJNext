@@ -1,22 +1,20 @@
-import React from "react";
-import { ImageInterface } from "../../@types/image.type";
-import SubPageHeader from "../../components/SubPageHeader";
-import { getImagesByName } from "../../lib/contentfulImage";
-import MyGoogleMap from "../../components/MyGoogleMap";
-import MyGoogleMap2 from "../../components/MyGoogleMap2";
- import {BsInstagram, BsFacebook, BsPinterest, BsYoutube} from 'react-icons/bs'
-import Link from "next/link";
- 
+import React from 'react'
+import { ImageInterface } from '../../@types/image.type'
+import SubPageHeader from '../../components/SubPageHeader'
+import { getImagesByName } from '../../lib/contentfulImage'
+import MyGoogleMap2 from '../../components/MyGoogleMap2'
+import { BsInstagram, BsFacebook, BsPinterest, BsYoutube } from 'react-icons/bs'
+import Link from 'next/link'
 
 interface ContactInterface {
-  headerImage: ImageInterface;
-  googleApiKey: string;
+  headerImage: ImageInterface
+  googleApiKey: string
 }
 
 const Contact = ({ headerImage, googleApiKey }: ContactInterface) => {
   return (
     <div className="ContactPage">
-      <SubPageHeader image={headerImage} />
+      <SubPageHeader image={headerImage} h1="Contact" />
       <div className="content">
         !
         <section className="sectionContact">
@@ -40,23 +38,22 @@ const Contact = ({ headerImage, googleApiKey }: ContactInterface) => {
               <div className="socials">
                 <Link href="#">
                   <div>
-                    
-                    <BsInstagram className="logo"/>
+                    <BsInstagram className="logo" />
                   </div>
                 </Link>
                 <Link href="#">
                   <div>
-                    <BsFacebook className="logo"/>
+                    <BsFacebook className="logo" />
                   </div>
                 </Link>
                 <Link href="#">
                   <div>
-                    <BsPinterest className="logo"/>
+                    <BsPinterest className="logo" />
                   </div>
                 </Link>
                 <Link href="#">
                   <div>
-                    <BsYoutube className="logo"/>
+                    <BsYoutube className="logo" />
                   </div>
                 </Link>
               </div>
@@ -68,24 +65,24 @@ const Contact = ({ headerImage, googleApiKey }: ContactInterface) => {
         </section>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
 
 export async function getStaticProps() {
   //   const documents = (await getEncartOnPage("contact")).map(
   //     (encart) => encart.rtext.json
   //   );
-  const [homeImage] = await getImagesByName(["contact-header"]);
-  const apiKey = process.env.GOOGLE_API_KEY;
-  console.log("contact images : ", homeImage);
-  console.log("==> apiKey : ", apiKey);
+  const [homeImage] = await getImagesByName(['contact-header'])
+  const apiKey = process.env.GOOGLE_API_KEY
+  console.log('contact images : ', homeImage)
+  console.log('==> apiKey : ', apiKey)
   return {
     props: {
       headerImage: homeImage,
       googleApiKey: apiKey,
     },
     revalidate: 43200,
-  };
+  }
 }

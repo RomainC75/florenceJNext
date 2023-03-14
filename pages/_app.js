@@ -1,17 +1,18 @@
-import "../styles/app.css";
-import "../styles/IndexHomePage.css";
-import "../styles/ContactPage.css"
-import "../components/styles/navbar.css"
-import "../components/styles/Carousel.css"
-import "../components/sections/styles/Home1.css"
-import "../components/sections/styles/Home2.css"
-import "../components/styles/Footer.css"
-import "../components/styles/AnimatedHeaders.css"
-import "../components/styles/SubPageHeader.css"
+import '../styles/app.css'
+import '../styles/IndexHomePage.css'
+import '../styles/ContactPage.css'
+import '../components/styles/navbar.css'
+import '../components/styles/Carousel.css'
+import '../components/sections/styles/Home1.css'
+import '../components/sections/styles/Home2.css'
+import '../components/styles/Footer.css'
+import '../components/styles/AnimatedHeaders.css'
+import '../components/styles/SubPageHeader.css'
+import '../components/styles/gallery.css'
 
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar";
-import Head from "next/head";
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -38,13 +39,16 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap"
           rel="stylesheet"
         />
-        <script src="https://kit.fontawesome.com/b79ad1b1e3.js" crossorigin="anonymous"></script>
+        <script
+          src="https://kit.fontawesome.com/b79ad1b1e3.js"
+          crossorigin="anonymous"
+        ></script>
       </Head>
       <Navbar />
       <Component {...pageProps} />
-      <Footer/>
+      <Footer />
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp
