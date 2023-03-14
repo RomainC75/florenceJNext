@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import classes from './navbar.module.css'
+// import classes from './navbar.module.css'
 import Link from 'next/link'
+import Menu from './Menu'
 
 const Navbar = (): JSX.Element => {
   const [YPosition, setYPosition] = useState<number>(0)
+  const [showMenu, setShowMenu] = useState<boolean>(false)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -22,7 +24,9 @@ const Navbar = (): JSX.Element => {
       <nav
         className={`Navbar NavbarHeight ${YPosition > 0 ? 'black' : 'white'}`}
       >
-        <div className="openMenu">y</div>
+        <div className="openMenu" onClick={() => setShowMenu(!showMenu)}>
+          y
+        </div>
         <div className="">
           <Image
             className="signateur"
@@ -42,6 +46,7 @@ const Navbar = (): JSX.Element => {
           </Link>
         </div>
       </nav>
+      <Menu showMenu={showMenu} />
     </>
   )
 }

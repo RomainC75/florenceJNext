@@ -1,0 +1,19 @@
+.Menu {
+  height: 100vw;
+  width: 100%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  transform: translateY(-100%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: black;
+}
+.Menu.showMenu {
+  transform: translateY(0);
+}/*# sourceMappingURL=Menu.css.map */
