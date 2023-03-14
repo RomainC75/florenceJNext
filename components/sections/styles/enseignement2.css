@@ -1,0 +1,14 @@
+.Enseignement2 {
+  display: flex;
+  margin-bottom: 40px;
+}
+.Enseignement2 > .text {
+  grid-area: 3/4/7/11;
+  z-index: 2;
+  background-color: white;
+  padding: 15px;
+}
+.Enseignement2 > .imageContainer {
+  width: 200px;
+  height: 200px;
+}/*# sourceMappingURL=enseignement2.css.map */

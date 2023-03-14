@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ImageIdConvertorInterface, ImageInterface } from '../@types/image.type'
+import { ImageInterface } from '../@types/image.type'
 import Image from 'next/image'
 
 interface CarouselInterface {

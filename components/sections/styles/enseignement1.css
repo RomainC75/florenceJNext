@@ -1,0 +1,21 @@
+.Enseignement1 {
+  display: grid;
+  grid-template: repeat(7, 14%)/repeat(10, 10%);
+  margin: 0 auto 40px auto;
+  height: 900px;
+}
+.Enseignement1 > .text {
+  grid-area: 3/4/7/11;
+  z-index: 2;
+  background-color: white;
+  padding: 30px 15px;
+}
+.Enseignement1 > .imageContainer {
+  grid-area: 1/1/8/6;
+}
+.Enseignement1 > .imageContainer > img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=enseignement1.css.map */

@@ -71,9 +71,6 @@ const Contact = ({ headerImage, googleApiKey }: ContactInterface) => {
 export default Contact
 
 export async function getStaticProps() {
-  //   const documents = (await getEncartOnPage("contact")).map(
-  //     (encart) => encart.rtext.json
-  //   );
   const [homeImage] = await getImagesByName(['contact-header'])
   const apiKey = process.env.GOOGLE_API_KEY
   console.log('contact images : ', homeImage)

@@ -6,6 +6,7 @@ interface SubPageHeaderInterface {
 }
 
 const SubPageHeader = ({ image, h1 }: SubPageHeaderInterface) => {
+  console.log('image : ', image)
   return (
     <div className="SubPageHeader">
       <div className="curtain pageCurtain"></div>
