@@ -18,10 +18,6 @@ const Gallery = ({ oeuvreImages }: GalleryInterface) => {
     setSelectedImage(image)
   }
 
-  useEffect(() => {
-    console.log('=======>', showBigImage)
-  }, [showBigImage])
-
   return (
     <div
       className="Gallery"

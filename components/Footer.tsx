@@ -47,10 +47,10 @@ const Footer = (): JSX.Element => {
             <Link href="/actualite">Actualité</Link>
           </div>
           <div className="underlinee">
-            <Link href="cours">Cours</Link>
+            <Link href="enseignement">Enseignement</Link>
           </div>
           <div className="underlinee">
-            <Link href="#">Archives</Link>
+            <Link href="bio">Bio</Link>
           </div>
           <div className="underlinee">
             <Link href="contact">Contact</Link>

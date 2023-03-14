@@ -1,0 +1,62 @@
+.Bio img, .Bio .whiteBox {
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+}
+.Bio > .content {
+  width: 80%;
+  margin: 50px auto;
+  background-color: #f9f7f7;
+  color: rgb(74, 74, 73);
+  letter-spacing: 3px;
+  text-align: justify;
+}
+.Bio > .content > section {
+  margin-bottom: 80px;
+}
+.Bio > .content > .sectionOne {
+  display: flex;
+  align-items: center;
+}
+.Bio > .content > .sectionOne > img {
+  width: 300px;
+  height: 440px;
+  margin-left: 40px;
+}
+.Bio > .content > .section2 {
+  display: grid;
+  grid-template: repeat(7, 14%)/repeat(10, 10%);
+}
+.Bio > .content > .section2 > img {
+  grid-area: 1/1/8/6;
+}
+.Bio > .content > .section2 > .text {
+  grid-area: 3/4/7/11;
+  background-color: white;
+  padding: 40px 20px;
+}
+.Bio > .content > .section3 {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  font-style: italic;
+  font-weight: 700;
+  background-color: white;
+  width: 80%;
+}
+.Bio > .content > .section4 {
+  display: grid;
+  grid-template: repeat(7, 14%)/repeat(10, 10%);
+}
+.Bio > .content > .section4 > img {
+  grid-area: 1/6/8/11;
+}
+.Bio > .content > .section4 > .text {
+  grid-area: 2/1/8/6;
+  padding: 50px 30px;
+  background-color: white;
+  text-align: right;
+  z-index: 30;
+}
+.Bio > .content > .section5 {
+  text-align: center;
+  font-style: italic;
+}/*# sourceMappingURL=BioPage.css.map */
