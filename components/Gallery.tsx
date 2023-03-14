@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { ImageInterface } from '../@types/image.type'
+import BigImage from './BigImage'
 
-const Gallery = ({ oeuvreImages }) => {
-  console.log('oeuvreI', oeuvreImages)
+interface GalleryInterface {
+  oeuvreImages: ImageInterface[]
+}
+
+const Gallery = ({ oeuvreImages }: GalleryInterface) => {
+  const [showBigImage, setShowBigImage] = useState<boolean>(false)
+  const [selectedImage, setSelectedImage] = useState<ImageInterface | null>(
+    null
+  )
+
+  const handleSelectImage = (image: ImageInterface) => {
+    setShowBigImage(true)
+    setSelectedImage(image)
+  }
+
+  useEffect(() => {
+    console.log('=======>', showBigImage)
+  }, [showBigImage])
 
   return (
     <div
@@ -11,8 +29,12 @@ const Gallery = ({ oeuvreImages }) => {
         height: `${Math.ceil(oeuvreImages.length / 3) * 300 + 300}px`,
       }}
     >
-      {oeuvreImages.map((image) => (
-        <div key={image.url} className="image">
+      {oeuvreImages.map((image: ImageInterface) => (
+        <div
+          key={image.url}
+          className="image"
+          onClick={() => handleSelectImage(image)}
+        >
           <Image
             className="img"
             src={image.url}
@@ -25,6 +47,9 @@ const Gallery = ({ oeuvreImages }) => {
           </div>
         </div>
       ))}
+      {showBigImage && (
+        <BigImage image={selectedImage} setShowBigImage={setShowBigImage} />
+      )}
     </div>
   )
 }

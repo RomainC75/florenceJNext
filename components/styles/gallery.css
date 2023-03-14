@@ -12,6 +12,7 @@
   height: 400px;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 .Gallery > .image:hover > .img {
   transform: scale(1.1);

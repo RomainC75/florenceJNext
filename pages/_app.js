@@ -9,6 +9,7 @@ import '../components/styles/Footer.css'
 import '../components/styles/AnimatedHeaders.css'
 import '../components/styles/SubPageHeader.css'
 import '../components/styles/gallery.css'
+import '../components/styles/bigImage.css'
 
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'

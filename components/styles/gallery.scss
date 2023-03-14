@@ -5,13 +5,13 @@
   max-width: 1000px;
   overflow: hidden;
   margin: 0 auto;
-
   & > .image {
     border-radius: 1em;
     flex-basis: 31%;
     height: 400px;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
     &:hover > .img {
       transform: scale(1.1);
     }
