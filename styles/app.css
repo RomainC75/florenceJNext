@@ -4,13 +4,13 @@
 /* purgecss end ignore */
 @tailwind utilities;
 html {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   background-color: #f9f7f7;
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
-  /* font-size: 0.9rem; */
 }
 
 a,
@@ -21,11 +21,11 @@ a:hover {
 }
 
 .DMSerif {
-  font-family: 'DM Serif Text', serif;
+  font-family: "DM Serif Text", serif;
 }
 
 .Didone {
-  font-family: 'Antic Didone', serif;
+  font-family: "Antic Didone", serif;
 }
 
 @keyframes menuListeAnimation {
@@ -51,7 +51,7 @@ a:hover {
 .elegantRText a {
   color: rgb(0, 0, 0);
   -webkit-text-decoration: underline rgb(171, 171, 171);
-  text-decoration: underline rgb(171, 171, 171);
+          text-decoration: underline rgb(171, 171, 171);
   font-style: italic;
   font-weight: 500;
 }
@@ -89,4 +89,4 @@ a:hover {
 
 .pageCurtain {
   height: 100%;
-} /*# sourceMappingURL=app.css.map */
+}/*# sourceMappingURL=app.css.map */

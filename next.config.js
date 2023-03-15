@@ -2,6 +2,6 @@
 module.exports = {
   images: {
     // loader: 'custom',
-    domains: ['images.ctfassets.net'],
+    domains: ['images.ctfassets.net', 'raw.githubusercontent.com'],
   },
 }

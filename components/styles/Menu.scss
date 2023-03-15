@@ -1,11 +1,10 @@
 .Menu {
-  height: 100vw;
-  width: 100%;
+  font-family: 'Antic Didone';
+  position: fixed;
   color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   transform: translateY(-100%);
   top: 0;
   left: 0;
@@ -13,9 +12,21 @@
   bottom: 0;
   z-index: 10;
   background-color: black;
+  transition: all 0.8s ease-out;
   &.showMenu {
     transform: translateY(0);
   }
   & > .MenuContainer {
+    display: flex;
+    justify-content: space-between;
+    & > .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      & > a {
+        margin-bottom: 15px;
+        font-size: 2rem;
+      }
+    }
   }
 }
