@@ -89,4 +89,31 @@ a:hover {
 
 .pageCurtain {
   height: 100%;
+}
+
+.underline {
+  list-style-type: none;
+  font-size: 2.25em;
+  line-height: 1em;
+  font-family: "Antic Didone", serif;
+  cursor: pointer;
+  position: relative;
+}
+.underline::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background: #b89535;
+  width: 100%;
+  transform: scaleX(0);
+  left: 0;
+  top: 70%;
+  transform-origin: left;
+  transition: all 1s;
+}
+.underline:hover {
+  color: whitesmoke;
+}
+.underline:hover::after {
+  transform: scaleX(0.1);
 }/*# sourceMappingURL=app.css.map */

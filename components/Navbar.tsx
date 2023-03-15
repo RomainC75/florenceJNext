@@ -18,11 +18,13 @@ const Navbar = (): JSX.Element => {
     <>
       <div
         className={`NavbarBackground NavbarHeight ${
-          YPosition > 0 && 'NavbarBackground-visible'
+          !showMenu && YPosition > 0 && 'NavbarBackground-visible'
         }`}
       ></div>
       <nav
-        className={`Navbar NavbarHeight ${YPosition > 0 ? 'black' : 'white'}`}
+        className={`Navbar NavbarHeight ${
+          !showMenu && YPosition > 0 ? 'black' : 'white'
+        }`}
       >
         <div className="openMenu" onClick={() => setShowMenu(!showMenu)}>
           <div className={`xContainer ${showMenu ? 'MenuOpened' : ''}`}>
@@ -36,7 +38,7 @@ const Navbar = (): JSX.Element => {
             <Image
               className="signature"
               src={
-                YPosition > 0
+                !showMenu && YPosition > 0
                   ? '/assets/signature-black.png'
                   : '/assets/signature-white.png'
               }
@@ -48,7 +50,9 @@ const Navbar = (): JSX.Element => {
         </div>
         <div className="message_btn">
           <Link href="/#mail">
-            <p className={`${YPosition > 0 ? 'black' : 'white'}`}>Message</p>
+            <p className={`${!showMenu && YPosition > 0 ? 'black' : 'white'}`}>
+              Message
+            </p>
           </Link>
         </div>
       </nav>

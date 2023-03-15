@@ -27,6 +27,7 @@ $white: #f9f7f7;
   left: 50%;
   transform: translate(-50%, 0);
   border-bottom: 1px solid rgb(169, 169, 169);
+  max-width: 1000px;
   & .message_btn {
     padding: 15px;
     border-radius: 0.5em;
