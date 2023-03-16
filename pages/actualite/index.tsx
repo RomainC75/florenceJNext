@@ -4,9 +4,10 @@ import { getPosts } from '../../lib/api/post'
 import SubPageHeader from '../../components/SubPageHeader'
 import { getImagesByName } from '../../lib/contentfulImage'
 import { ImageInterface } from '../../@types/image.type'
+import PostItem from '../../components/PostItem'
 
 interface ActualiteInterface {
-  posts: PostInterface
+  posts: PostInterface[]
   headerImage: ImageInterface
 }
 
@@ -14,6 +15,9 @@ const Actualite = ({ posts, headerImage }: ActualiteInterface): JSX.Element => {
   return (
     <div className="Actualite">
       <SubPageHeader image={headerImage} h1="Actualité" />
+      {posts.map((post) => (
+        <PostItem post={post} />
+      ))}
     </div>
   )
 }
