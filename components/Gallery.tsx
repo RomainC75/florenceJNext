@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { ImageInterface } from '../@types/image.type'
 import BigImage from './BigImage'

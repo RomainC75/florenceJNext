@@ -19,8 +19,6 @@ interface IndexInterface {
 }
 
 export default function Index({
-  home1Document,
-  home2Document,
   documents,
   homeImages,
   carouselImages,
@@ -68,7 +66,7 @@ export default function Index({
   )
 }
 
-export async function getStaticProps({ preview = false }) {
+export async function getStaticProps() {
   let error = false
   const documents = (await getEncartOnPage('home')).map(
     (encart) => encart.rtext.json

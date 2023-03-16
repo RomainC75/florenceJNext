@@ -1,6 +1,5 @@
 import {
   ImageIdConvertorInterface,
-  ImageInterface,
   RawImageInterface,
 } from '../../@types/image.type'
 import { IMAGEIDCONVERTOR_GRAPHQL_FIELDS } from './graphql/imageConvertor.graphql'

@@ -73,7 +73,6 @@ export default Contact
 export async function getStaticProps() {
   const [homeImage] = await getImagesByName(['contact-header'])
   const apiKey = process.env.GOOGLE_API_KEY
-  console.log('contact images : ', homeImage)
   console.log('==> apiKey : ', apiKey)
   return {
     props: {

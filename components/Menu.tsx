@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getImagesByName } from '../lib/contentfulImage'
-import { ImageInterface } from '../@types/image.type'
 
 interface MenuInterface {
   showMenu: boolean
   setShowMenu: (bool: boolean) => void
-  //   menuImage: ImageInterface
 }
 
 const Menu = ({ showMenu, setShowMenu }: MenuInterface) => {

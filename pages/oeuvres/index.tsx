@@ -2,22 +2,16 @@ import React from 'react'
 import { ImageInterface } from '../../@types/image.type'
 import SubPageHeader from '../../components/SubPageHeader'
 import { getImagesByName } from '../../lib/contentfulImage'
-import MyGoogleMap2 from '../../components/MyGoogleMap2'
-import { BsInstagram, BsFacebook, BsPinterest, BsYoutube } from 'react-icons/bs'
-import Link from 'next/link'
 import Gallery from '../../components/Gallery'
 import { getImageIdsAndNamesContaining } from '../../lib/api/imageIdConvertor.api'
 
 interface ContactInterface {
   headerImage: ImageInterface
-  googleApiKey: string
+  oeuvreImages: ImageInterface[]
 }
 
-const Contact = ({
-  headerImage,
-  googleApiKey,
-  oeuvreImages,
-}: ContactInterface) => {
+const Contact = ({ headerImage, oeuvreImages }: ContactInterface) => {
+  console.log('oeurvres : ', oeuvreImages)
   return (
     <div className="ContactPage">
       <SubPageHeader image={headerImage} h1="Oeuvres" />
@@ -33,13 +27,10 @@ export async function getStaticProps() {
   //     (encart) => encart.rtext.json
   //   );
   const [homeImage] = await getImagesByName(['oeuvres-header'])
-
   const images = await getImageIdsAndNamesContaining('oeuvre')
   const oeuvreImages = await getImagesByName(images.map((img) => img.name))
 
-  const apiKey = process.env.GOOGLE_API_KEY
-  console.log('contact images : ', homeImage)
-  console.log('==> apiKey : ', apiKey)
+  const apiKey: string = process.env.GOOGLE_API_KEY
   return {
     props: {
       headerImage: homeImage,
