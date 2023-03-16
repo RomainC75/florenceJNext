@@ -1,30 +1,12 @@
-import { ENCART_GRAPHQL_FIELDS } from "./graphql/graphql";
-
-
-async function fetchGraphQL(query, preview = false) {
-  return fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${
-          preview
-            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-            : process.env.CONTENTFUL_ACCESS_TOKEN
-        }`,
-      },
-      body: JSON.stringify({ query }),
-    }
-  ).then((response) => response.json());
-}
+import { ENCART_GRAPHQL_FIELDS } from './graphql/graphql'
+import fetchGraphQL from './graphql/fetchGraphQL'
 
 function extractPost(fetchResponse) {
-  return fetchResponse?.data?.postCollection?.items?.[0];
+  return fetchResponse?.data?.postCollection?.items?.[0]
 }
 
 function extractPostEntries(fetchResponse) {
-  return fetchResponse?.data?.postCollection?.items;
+  return fetchResponse?.data?.postCollection?.items
 }
 
 export async function getPreviewPostBySlug(slug) {
@@ -37,8 +19,8 @@ export async function getPreviewPostBySlug(slug) {
       }
     }`,
     true
-  );
-  return extractPost(entry);
+  )
+  return extractPost(entry)
 }
 
 export async function getAllPostsWithSlug() {
@@ -50,29 +32,29 @@ export async function getAllPostsWithSlug() {
         }
       }
     }`
-  );
-  return extractPostEntries(entries);
+  )
+  return extractPostEntries(entries)
 }
 
 export async function getAllPostsForHome(preview) {
   const entries = await fetchGraphQL(
     `query {
-      postCollection(order: date_DESC, preview: ${preview ? "true" : "false"}) {
+      postCollection(order: date_DESC, preview: ${preview ? 'true' : 'false'}) {
         items {
           ${ENCART_GRAPHQL_FIELDS}
         }
       }
     }`,
     preview
-  );
-  return extractPostEntries(entries);
+  )
+  return extractPostEntries(entries)
 }
 
 export async function getPostAndMorePosts(slug, preview) {
   const entry = await fetchGraphQL(
     `query {
       postCollection(where: { slug: "${slug}" }, preview: ${
-      preview ? "true" : "false"
+      preview ? 'true' : 'false'
     }, limit: 1) {
         items {
           ${ENCART_GRAPHQL_FIELDS}
@@ -80,11 +62,11 @@ export async function getPostAndMorePosts(slug, preview) {
       }
     }`,
     preview
-  );
+  )
   const entries = await fetchGraphQL(
     `query {
       postCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
-      preview ? "true" : "false"
+      preview ? 'true' : 'false'
     }, limit: 2) {
         items {
           ${ENCART_GRAPHQL_FIELDS}
@@ -92,16 +74,14 @@ export async function getPostAndMorePosts(slug, preview) {
       }
     }`,
     preview
-  );
+  )
   return {
     post: extractPost(entry),
     morePosts: extractPostEntries(entries),
-  };
+  }
 }
 
-
-
-export async function getAllEncart(preview?:boolean)  {
+export async function getAllEncart(preview?: boolean) {
   const entries = await fetchGraphQL(
     `query {
       encartCollection {
@@ -112,12 +92,14 @@ export async function getAllEncart(preview?:boolean)  {
       }
     }`,
     preview
-  );
-  
-  return entries.data.encartCollection.items ? entries.data.encartCollection.items : null
+  )
+
+  return entries.data.encartCollection.items
+    ? entries.data.encartCollection.items
+    : null
 }
 
-export async function getEncartOnPage(pageName, preview?:boolean)  {
+export async function getEncartOnPage(pageName, preview?: boolean) {
   const entries = await fetchGraphQL(
     `query {
       encartCollection (where:{page:"${pageName}"}, order: [title_ASC]){
@@ -128,7 +110,9 @@ export async function getEncartOnPage(pageName, preview?:boolean)  {
       }
     }`,
     preview
-  );
-  
-  return entries.data.encartCollection.items ? entries.data.encartCollection.items : null
+  )
+
+  return entries.data.encartCollection.items
+    ? entries.data.encartCollection.items
+    : null
 }

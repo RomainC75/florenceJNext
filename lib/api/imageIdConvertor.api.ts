@@ -3,24 +3,7 @@ import {
   RawImageInterface,
 } from '../../@types/image.type'
 import { IMAGEIDCONVERTOR_GRAPHQL_FIELDS } from './graphql/imageConvertor.graphql'
-
-async function fetchGraphQL(query, preview = false) {
-  return fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${
-          preview
-            ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
-            : process.env.CONTENTFUL_ACCESS_TOKEN
-        }`,
-      },
-      body: JSON.stringify({ query }),
-    }
-  ).then((response) => response.json())
-}
+import fetchGraphQL from './graphql/fetchGraphQL'
 
 function extractImageEntries(fetchResponse) {
   return fetchResponse?.data?.imageIdConvertorCollection?.items
