@@ -9,15 +9,15 @@ export interface RawImageInterface {
 export interface ImageInterface {
   title: string
   url: string
-  details: {
+  details?: {
     size: number
     image?: {
       width: number
       height: number
     }
   }
-  fileName: string
-  contentType: string
+  fileName?: string
+  contentType?: string
 }
 
 export interface ImageIdConvertorInterface {

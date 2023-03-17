@@ -1,4 +1,5 @@
 import { Document } from '@contentful/rich-text-types'
+import { ImageInterface } from './image.type'
 
 export interface PostInterface {
   content: {
@@ -6,16 +7,11 @@ export interface PostInterface {
   }
   date: Date
   imagesCollection: {
-    items: ImageInterface
+    items: ImageInterface[]
   }
   tags: string
   title: string
   sys: {
     id: string
   }
-}
-
-interface ImageInterface {
-  url: string
-  title?: string
 }

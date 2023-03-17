@@ -56,6 +56,6 @@ export async function getPostById(id: string) {
         tags
       }
     }
-    `)
+  `)
   return extractPost(posts)
 }
