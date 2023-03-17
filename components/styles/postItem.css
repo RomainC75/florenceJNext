@@ -1,0 +1,30 @@
+.PostItem {
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+  margin: 15px;
+  background-color: white;
+  padding: 8px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+.PostItem > .image {
+  height: 50%;
+}
+.PostItem > .image > img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.PostItem > h3 {
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  margin-bottom: 5px;
+}
+.PostItem > .text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 150px;
+}/*# sourceMappingURL=postItem.css.map */

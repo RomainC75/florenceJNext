@@ -12,12 +12,15 @@ interface ActualiteInterface {
 }
 
 const Actualite = ({ posts, headerImage }: ActualiteInterface): JSX.Element => {
+  console.log('==> posts : ', posts)
   return (
     <div className="Actualite">
       <SubPageHeader image={headerImage} h1="Actualité" />
-      {posts.map((post) => (
-        <PostItem post={post} />
-      ))}
+      <ul className="posts">
+        {posts.map((post) => (
+          <PostItem post={post} key={post.sys.id} />
+        ))}
+      </ul>
     </div>
   )
 }

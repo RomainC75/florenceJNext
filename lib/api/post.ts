@@ -9,6 +9,9 @@ export async function getPosts() {
     query {
         postCollection(order: [date_DESC]) {
           items {
+            sys{
+              id
+            }
             title
             content{
               json
@@ -17,6 +20,7 @@ export async function getPosts() {
             imagesCollection{
               items{
                 url
+                title
               }
             }
             tags
