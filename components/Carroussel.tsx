@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ImageInterface } from '../@types/image.type'
 import Image from 'next/image'
+import { getImageWidthAndGap } from '../utils/carouselDimensionsExtractor'
 
 interface CarouselInterface {
   carouselImages: ImageInterface[]
@@ -8,21 +9,29 @@ interface CarouselInterface {
 
 const Carousel = ({ carouselImages }: CarouselInterface) => {
   const [shift, setshift] = useState(0)
-  console.log('insiede carousel ', carouselImages)
+  console.log('inside carousel ', carouselImages)
   const [YPosition, setYPosition] = useState<number>(0)
+
+  const [selectedImage, setSelectedImage] = useState<number>(0)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
       setYPosition(window.pageYOffset)
     })
-  })
+  }, [])
+
+  useEffect(() => {
+    const dimensions = getImageWidthAndGap()
+    setshift(selectedImage * (dimensions.width + dimensions.gap))
+  }, [selectedImage])
 
   const handleMoveCarousel = (direction) => {
+    console.log('directions: ', direction)
     if (
-      (direction === 1 && shift > 500) ||
-      (direction === -1 && shift < 510 * carouselImages.length)
+      (direction === 1 && selectedImage < carouselImages.length) ||
+      (direction === -1 && selectedImage > 0)
     ) {
-      setshift(direction * 510 + shift)
+      setSelectedImage(selectedImage + direction)
     }
   }
 
@@ -54,11 +63,11 @@ const Carousel = ({ carouselImages }: CarouselInterface) => {
         ))}
       </ul>
       <div className="btns">
-        <div className="btn" onClick={() => handleMoveCarousel(1)}>
+        <div className="btn" onClick={() => handleMoveCarousel(-1)}>
           {' '}
           &lt;{' '}
         </div>
-        <div className="btn" onClick={() => handleMoveCarousel(-1)}>
+        <div className="btn" onClick={() => handleMoveCarousel(1)}>
           {' '}
           &gt;{' '}
         </div>
