@@ -1,6 +1,7 @@
 .Enseignement2 {
   display: flex;
-  margin-bottom: 40px;
+  justify-content: space-around;
+  margin: 0 auto 40px auto;
 }
 .Enseignement2 > .text {
   grid-area: 3/4/7/11;

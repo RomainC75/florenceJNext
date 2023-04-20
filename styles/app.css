@@ -116,4 +116,11 @@ a:hover {
 }
 .underline:hover::after {
   transform: scaleX(0.1);
+}
+
+.Enseignement1,
+.Enseignement2,
+.footerBigContainer,
+.bioPageContent {
+  max-width: 1000px !important;
 }/*# sourceMappingURL=app.css.map */

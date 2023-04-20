@@ -6,6 +6,7 @@ import { getEncartOnPage } from '../../lib/api/text.api'
 import { getImagesByName } from '../../lib/contentfulImage'
 import { Document } from '@contentful/rich-text-types'
 import RichText from '../../components/richText'
+import SubPageHeader from '../../components/SubPageHeader'
 
 interface BioPageInterface {
   images: ImageInterface[]
@@ -15,13 +16,8 @@ interface BioPageInterface {
 const Bio = ({ images, documents }: BioPageInterface) => {
   return (
     <div className="Bio">
-      <Image
-        src={images[0].url}
-        alt={getAltFromFileName(images[0].fileName)}
-        width={1280}
-        height={400}
-      />
-      <div className="content">
+      <SubPageHeader image={images[0]} h1="Bio" />
+      <div className="content bioPageContent">
         <section className="sectionOne text-lg">
           <RichText document={documents[0]} />
           <Image
