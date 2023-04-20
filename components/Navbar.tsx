@@ -3,10 +3,13 @@ import Image from 'next/image'
 // import classes from './navbar.module.css'
 import Link from 'next/link'
 import Menu from './Menu'
+import { useRouter } from 'next/router'
 
 const Navbar = (): JSX.Element => {
   const [YPosition, setYPosition] = useState<number>(0)
   const [showMenu, setShowMenu] = useState<boolean>(false)
+  const { pathname } = useRouter()
+  console.log('==> URL ', pathname)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -49,7 +52,7 @@ const Navbar = (): JSX.Element => {
           </Link>
         </div>
         <div className="message_btn">
-          <Link href="/#mail">
+          <Link href={pathname + '/#mail'}>
             <p className={`${!showMenu && YPosition > 0 ? 'black' : 'white'}`}>
               Message
             </p>
