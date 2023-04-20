@@ -2,11 +2,18 @@
   padding-top: 128px;
   transition: all 0.7s;
 }
-.Home1 .textAnimation {
+.Home1 > div {
   width: 632px;
+}
+.Home1 > .textAnimation {
   margin: 0 auto;
 }
-.Home1 .text {
-  width: 632px;
+.Home1 > .text {
   margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .Home1 > div {
+    width: 90%;
+  }
 }/*# sourceMappingURL=Home1.css.map */

@@ -1,23 +1,30 @@
 .Home1 {
   padding-top: 128px;
   transition: all 0.7s;
-  & .textAnimation{
-    width:632px;
-    margin:0 auto;
+  & > div {
+    width: 632px;
+  }
+  & > .textAnimation {
+    margin: 0 auto;
     & h2 {
       // font-size: 3.5rem;
       // text-align: center;
       // margin-bottom:30px;
       // display: flex;
-      & p{
-
+      & p {
       }
-    }  
+    }
   }
-  
-  & .text{
-    width:632px;
+
+  & > .text {
     margin: 0 auto;
-    
+  }
+}
+
+@media (max-width: 700px) {
+  .Home1 {
+    & > div {
+      width: 90%;
+    }
   }
 }

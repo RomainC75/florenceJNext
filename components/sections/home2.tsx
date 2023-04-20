@@ -1,26 +1,26 @@
-import React,{useState, useEffect} from "react";
-import Image from "next/image";
-import { ImageInterface } from "../../@types/image.type";
-import RichText from "../richText";
-import { Document } from "@contentful/rich-text-types";
+import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
+import { ImageInterface } from '../../@types/image.type'
+import RichText from '../richText'
+import { Document } from '@contentful/rich-text-types'
 
 interface Home2Interface {
-  document: Document;
-  images: ImageInterface[];
+  document: Document
+  images: ImageInterface[]
 }
 
 const Home2 = ({ document, images }: Home2Interface): JSX.Element => {
-  const [YPosition, setYPosition] = useState<number>(0) 
-  
-  useEffect(()=>{
-    window.addEventListener('scroll',()=>{
+  const [YPosition, setYPosition] = useState<number>(0)
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
       setYPosition(window.pageYOffset)
     })
   })
 
-  console.log("home2 : ", images);
+  console.log('home2 : ', images)
   return (
-    <section className={`Home2 ${YPosition>1000 ? 'dispSect' : 'hideSect'}`}>
+    <section className={`Home2 ${YPosition > 1000 ? 'dispSect' : 'hideSect'}`}>
       <div className="bigImage">
         <Image
           src={images[1].url}
@@ -46,7 +46,7 @@ const Home2 = ({ document, images }: Home2Interface): JSX.Element => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Home2;
+export default Home2

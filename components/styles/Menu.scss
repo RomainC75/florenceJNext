@@ -30,3 +30,25 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+  .MenuContainer {
+    width: 90%;
+    & > .image {
+      width: 50%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .MenuContainer {
+    justify-content: center !important;
+    & > .image {
+      display: none;
+    }
+    & > .links {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}

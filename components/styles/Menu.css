@@ -29,4 +29,25 @@
 .Menu > .MenuContainer > .links > a {
   margin-bottom: 15px;
   font-size: 2rem;
+}
+
+@media (max-width: 800px) {
+  .MenuContainer {
+    width: 90%;
+  }
+  .MenuContainer > .image {
+    width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .MenuContainer {
+    justify-content: center !important;
+  }
+  .MenuContainer > .image {
+    display: none;
+  }
+  .MenuContainer > .links {
+    margin: 0 auto;
+    text-align: center;
+  }
 }/*# sourceMappingURL=Menu.css.map */
