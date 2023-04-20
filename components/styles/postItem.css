@@ -1,5 +1,5 @@
 .PostItem {
-  width: 400px;
+  width: 350px;
   height: 500px;
   overflow: hidden;
   margin: 15px;
@@ -11,6 +11,7 @@
 }
 .PostItem > .image {
   height: 50%;
+  margin-bottom: 10px;
 }
 .PostItem > .image > img {
   height: 100%;
@@ -20,11 +21,33 @@
 }
 .PostItem > h3 {
   font-weight: bold;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.3rem;
   margin-bottom: 5px;
 }
 .PostItem > .text {
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
   height: 150px;
+  color: rgb(80, 80, 80);
+}
+.PostItem > .text > .rText {
+  height: 100%;
+}
+.PostItem > .text > .rText > p {
+  height: 100%;
+}
+.PostItem > .date {
+  color: grey;
+  text-align: right;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.PostItem > .tags {
+  color: rgb(3, 169, 244);
+}
+
+@media (max-width: 700px) {
+  .PostItem {
+    width: 300px;
+  }
 }/*# sourceMappingURL=postItem.css.map */

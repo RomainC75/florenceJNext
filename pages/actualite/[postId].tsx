@@ -19,13 +19,18 @@ const ActualiteDetails = ({
 }: ActualiteDetailsInterface): JSX.Element => {
   console.log('===>', foundPost.imagesCollection.items)
   return (
-    <div>
+    <div className="PostDetails">
       <SubPageHeader image={headerImage} h1={`${foundPost.title}`} />
       <div className="details">
         <Gallery oeuvreImages={foundPost.imagesCollection.items} />
-        <p>{displayDate(foundPost.date)}</p>
-        <RichText document={foundPost.content.json} />
-        <p>{foundPost.tags}</p>
+        <div className="infos">
+          <RichText document={foundPost.content.json} />
+          <p>
+            <strong>tags</strong> :{' '}
+            <span className="tags">{foundPost.tags}</span>
+          </p>
+          <p>{displayDate(foundPost.date)}</p>
+        </div>
       </div>
     </div>
   )

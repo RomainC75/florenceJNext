@@ -1,0 +1,18 @@
+.PostDetails {
+  margin-bottom: 50px;
+  letter-spacing: 1.8px;
+  color: rgb(80, 80, 80);
+  & > .details {
+    & > .infos {
+      width: 90%;
+      margin: 0 auto;
+      text-align: justify;
+      & .tags {
+        color: rgb(3, 169, 244);
+      }
+      & > * {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

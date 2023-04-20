@@ -4,6 +4,7 @@ import '../styles/ContactPage.css'
 import '../styles/BioPage.css'
 import '../styles/EnseignementPage.css'
 import '../styles/ActualitePage.css'
+import '../styles/PostDetails.css'
 import '../components/styles/postItem.css'
 import '../components/styles/Menu.css'
 import '../components/styles/navbar.css'
@@ -28,28 +29,28 @@ function MyApp({ Component, pageProps }) {
       <Head>
         {/* DM */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
           href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap"
           rel="stylesheet"
         />
         {/* NUNITO */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;900&display=swap"
           rel="stylesheet"
         />
         {/* ANTIC DIDONE  */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
           href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap"
           rel="stylesheet"
         />
         <script
           src="https://kit.fontawesome.com/b79ad1b1e3.js"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
       </Head>
       <Navbar />

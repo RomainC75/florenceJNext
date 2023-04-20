@@ -11,7 +11,7 @@ interface PostItem {
 
 const PostItem = ({ post }: PostItem): JSX.Element => {
   const mainImage = post.imagesCollection.items[0]
-  console.log('CONTENT : ', post.content)
+  console.log('CONTENT : ', post.content.json)
   return (
     <Link href={`/actualite/${post.sys.id}`}>
       <li className="PostItem">
@@ -23,9 +23,11 @@ const PostItem = ({ post }: PostItem): JSX.Element => {
             height={300}
           />
         </div>
+        <p className="date">{displayDate(post.date)}</p>
         <h3>{post.title}</h3>
-        <p>{displayDate(post.date)}</p>
+        <p className="tags">{post.tags}</p>
         <div className="text">
+          {/* <RichText document={truncation(post.content.json, 40)} /> */}
           <RichText document={post.content.json} />
         </div>
       </li>
