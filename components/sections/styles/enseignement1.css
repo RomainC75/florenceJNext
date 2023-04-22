@@ -18,4 +18,12 @@
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (max-width: 770px) {
+  .Enseignement1 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
 }/*# sourceMappingURL=enseignement1.css.map */

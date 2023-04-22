@@ -1,5 +1,4 @@
 .footer {
-    
   background-color: #212121;
   padding-top: 5.5rem;
   padding-bottom: 4em;
@@ -25,7 +24,7 @@
       & a {
         color: white;
         text-decoration: none;
-        font-family: "Antic Didone", serif;
+        font-family: 'Antic Didone', serif;
       }
     }
   }
@@ -37,7 +36,7 @@
     &__contact {
       width: 50%;
       & h3 {
-        font-family: "Antic Didone", serif;
+        font-family: 'Antic Didone', serif;
         font-size: 1.75rem;
       }
       &__container {
@@ -104,13 +103,13 @@
     list-style-type: none;
     font-size: 1.75em;
     line-height: 1em;
-    font-family: "Antic Didone", serif;
+    font-family: 'Antic Didone', serif;
 
     cursor: pointer;
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       height: 2px;
       background: #b89535;
@@ -125,6 +124,50 @@
       color: whitesmoke;
       &::after {
         transform: scaleX(1);
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    &__contactSocial {
+      flex-direction: column;
+      align-items: center;
+      &__contact,
+      &__social {
+        width: 100%;
+      }
+      &__social {
+        &__title {
+          text-align: center;
+        }
+        &__social {
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  .footer {
+    &__links {
+      flex-direction: column;
+      align-items: center;
+      & div {
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    &__contactSocial {
+      &__social {
+        width: 95%;
       }
     }
   }
