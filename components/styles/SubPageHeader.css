@@ -2,6 +2,7 @@
   height: 500px;
   margin-bottom: 140px;
   position: relative;
+  overflow: hidden;
 }
 .SubPageHeader h1 {
   position: absolute;
@@ -19,4 +20,19 @@
   height: 500px;
   margin: 0 auto;
   position: relative;
+}
+
+@media (max-width: 800px) {
+  .SubPageHeader {
+    height: 400px;
+  }
+  .SubPageHeader h1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .SubPageHeader {
+    height: 300px;
+    font-size: 30px;
+  }
 }/*# sourceMappingURL=SubPageHeader.css.map */

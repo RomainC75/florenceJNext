@@ -52,7 +52,7 @@ const Navbar = (): JSX.Element => {
           </Link>
         </div>
         <div className="message_btn">
-          <Link href={pathname + '/#mail'}>
+          <Link href={pathname + '/#mail'} onClick={() => setShowMenu(false)}>
             <p className={`${!showMenu && YPosition > 0 ? 'black' : 'white'}`}>
               Message
             </p>
