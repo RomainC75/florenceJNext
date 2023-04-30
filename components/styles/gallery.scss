@@ -4,7 +4,8 @@
   justify-content: space-between;
   max-width: 1000px;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
+  gap: 30px;
   & > .image {
     border-radius: 1em;
     flex-basis: 31%;
@@ -34,5 +35,30 @@
       opacity: 0;
       transition: all 1s;
     }
+  }
+}
+
+@media (max-width: 860px) {
+  .Gallery {
+    & > .image {
+      flex-basis: 47%;
+      gap: 0;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .Gallery {
+    margin: 5px;
+    & > .image {
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .Gallery {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
   }
 }

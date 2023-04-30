@@ -21,9 +21,9 @@ const Gallery = ({ oeuvreImages }: GalleryInterface) => {
   return (
     <div
       className="Gallery"
-      style={{
-        height: `${Math.ceil(oeuvreImages.length / 3) * 300 + 300}px`,
-      }}
+      // style={{
+      //   height: `${Math.ceil(oeuvreImages.length / 3) * 300 + 300}px`,
+      // }}
     >
       {oeuvreImages.map((image: ImageInterface) => (
         <div
