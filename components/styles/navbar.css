@@ -9,7 +9,7 @@
 }
 
 .NavbarBackground-visible {
-  top: 0;
+  top: 0 !important;
 }
 
 .Navbar {
@@ -32,6 +32,7 @@
 }
 .Navbar > .openMenu {
   z-index: 2;
+  flex-direction: row;
   border: none;
   display: block;
   width: 32px;
@@ -80,4 +81,21 @@
 }
 .Navbar.black > .openMenu > .xContainer > span {
   background-color: black;
+}
+
+@media (max-width: 600px) {
+  .NavbarBackground {
+    top: -80px;
+    height: 80px;
+  }
+  .Navbar {
+    height: 80px;
+  }
+  .Navbar > .openMenu {
+    width: 25px;
+    height: 25px;
+  }
+  .Navbar .message_btn {
+    padding: 10px;
+  }
 }/*# sourceMappingURL=navbar.css.map */

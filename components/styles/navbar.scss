@@ -1,4 +1,5 @@
 $navbarHeight: 120px;
+$navbarMinHeight: 80px;
 $white: #f9f7f7;
 
 .NavbarBackground {
@@ -12,7 +13,7 @@ $white: #f9f7f7;
 }
 
 .NavbarBackground-visible {
-  top: 0;
+  top: 0 !important;
 }
 
 .Navbar {
@@ -34,6 +35,7 @@ $white: #f9f7f7;
   }
   & > .openMenu {
     z-index: 2;
+    flex-direction: row;
     border: none;
     display: block;
     width: 32px;
@@ -87,6 +89,24 @@ $white: #f9f7f7;
       & > span {
         background-color: black;
       }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .NavbarBackground {
+    top: -$navbarMinHeight;
+    height: $navbarMinHeight;
+  }
+
+  .Navbar {
+    height: $navbarMinHeight;
+    & > .openMenu {
+      width: 25px;
+      height: 25px;
+    }
+    & .message_btn {
+      padding: 10px;
     }
   }
 }
