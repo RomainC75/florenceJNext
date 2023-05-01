@@ -15,22 +15,22 @@ const Footer = (): JSX.Element => {
               Retrouvez-moi sur :
             </h3>
             <div className="footer__contactSocial__social__social">
-              <Link href="#">
+              <Link href="http://www.instagram.com/jacquesson_florence">
                 <div>
                   <BsInstagram />
                 </div>
               </Link>
-              <Link href="#">
+              <Link href="http://www.facebook.com/florence.jacquesson">
                 <div>
                   <BsFacebook />
                 </div>
               </Link>
-              <Link href="#">
+              <Link href="http://www.pinterest.fr/jacquessonf">
                 <div>
                   <BsPinterest />
                 </div>
               </Link>
-              <Link href="#">
+              <Link href="https://www.youtube.com/watch?v=wj3i3C6zAAk">
                 <div>
                   <BsYoutube />
                 </div>
