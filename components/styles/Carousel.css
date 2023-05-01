@@ -50,4 +50,18 @@
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+.Carousel .btns > .btn:active {
+  background-color: rgb(216, 216, 247);
+}
+
+@media (max-width: 900px) {
+  .Carousel > .btns {
+    left: 85%;
+  }
+}
+@media (max-width: 550px) {
+  .Carousel > .btns {
+    left: 75%;
+  }
 }/*# sourceMappingURL=Carousel.css.map */

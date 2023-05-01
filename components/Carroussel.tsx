@@ -21,14 +21,19 @@ const Carousel = ({ carouselImages }: CarouselInterface) => {
   }, [])
 
   useEffect(() => {
+    console.log('=> SelectedImage : ', selectedImage)
     const dimensions = getImageWidthAndGap()
-    setshift(selectedImage * (dimensions.width + dimensions.gap))
+    setshift(selectedImage * -(dimensions.width + dimensions.gap))
   }, [selectedImage])
+
+  useEffect(() => {
+    console.log('Shift : ', shift)
+  }, [shift])
 
   const handleMoveCarousel = (direction) => {
     console.log('directions: ', direction)
     if (
-      (direction === 1 && selectedImage < carouselImages.length) ||
+      (direction === 1 && selectedImage < carouselImages.length - 1) ||
       (direction === -1 && selectedImage > 0)
     ) {
       setSelectedImage(selectedImage + direction)

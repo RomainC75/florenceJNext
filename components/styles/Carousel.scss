@@ -1,6 +1,6 @@
 .Carousel {
   position: relative;
-  margin:100px 0 ;
+  margin: 100px 0;
   transition: all 0.7s;
   & ul {
     display: flex;
@@ -29,7 +29,7 @@
     }
   }
 
-  & .imageTitle{
+  & .imageTitle {
     text-align: right;
   }
 
@@ -47,6 +47,27 @@
     align-items: center;
     border-radius: 2em;
     cursor: pointer;
-    user-select: none; 
+    user-select: none;
+    & > .btn {
+      &:active {
+        background-color: rgb(216, 216, 247);
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .Carousel {
+    & > .btns {
+      left: 85%;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .Carousel {
+    & > .btns {
+      left: 75%;
+    }
   }
 }
