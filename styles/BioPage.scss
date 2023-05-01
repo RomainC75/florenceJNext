@@ -66,3 +66,29 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+  .Bio {
+    & > .content {
+      width: 95%;
+      margin: 30px auto;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .Bio {
+    & > .content {
+      & > .sectionOne {
+        flex-direction: column;
+        font-size: 1rem;
+      }
+      & > .section2,
+      .section4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
