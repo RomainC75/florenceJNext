@@ -16,8 +16,8 @@ const BigImage = ({
     <div className="BigImage">
       <div className="container">
         <Image src={image.url} width={600} height={600} alt={image.title} />
-        <div className="crossIcon">
-          <ImCross onClick={() => setShowBigImage(false)} />
+        <div className="crossIcon" onClick={() => setShowBigImage(false)}>
+          <ImCross />
         </div>
         <p>{image.title}</p>
       </div>
